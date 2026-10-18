@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ортопедична подушка «Метелик» з ефектом пам'яті</title>
+  
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS ЗМІННІ ТА БАЗОВІ СТИЛІ */
+    :root {
+      --primary: #2b7fff;
+      --primary-hover: #1b68e0;
+      --accent-red: #ff3b30;
+      --accent-gold: #f59e0b;
+      --bg-main: #f4f7fb;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 25px rgba(43,127,255,0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    section {
+      padding: 24px 16px;
+      border-bottom: 8px solid #f0f3f8;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.25;
+      color: #111827;
+    }
+
+    .section-title {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .text-center { text-align: center; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      margin: 16px 0;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, #2b7fff 0%, #1a64d6 100%);
+      color: #ffffff;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 10px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      margin: 16px 0;
+      animation: pulse 2s infinite;
+      letter-spacing: 0.5px;
+      transition: background 0.3s ease;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(43, 127, 255, 0.6); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 12px rgba(43, 127, 255, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(43, 127, 255, 0); }
+    }
+
+    .timer-block {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .timer-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: #94a3b8;
+    }
+
+    .timer-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .timer-box {
+      background: #1e293b;
+      padding: 6px 12px;
+      border-radius: 8px;
+      min-width: 65px;
+      border: 1px solid #334155;
+    }
+
+    .timer-val {
+      font-size: 22px;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .timer-label {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .promo-banner {
+      background: var(--accent-red);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 13px;
+      text-align: center;
+      padding: 8px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin: 12px 0;
+    }
+
+    .badge-item {
+      flex: 1;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-container {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      margin: 14px 0;
+    }
+
+    .old-price {
+      font-size: 15px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .discount-badge {
+      display: inline-block;
+      background: var(--accent-red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin: 0 6px;
+    }
+
+    .new-price {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 16px 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #10b981;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .stock-counter {
+      text-align: center;
+      font-size: 13px;
+      color: #475569;
+      margin-top: -6px;
+    }
+
+    .stock-counter strong {
+      color: var(--accent-red);
+      font-size: 15px;
+    }
+
+    .bundle-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 16px;
+      padding: 18px 14px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2);
+      position: relative;
+    }
+
+    .bundle-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .bundle-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #78350f;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .bundle-price-box {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .bundle-old {
+      font-size: 14px;
+      color: #92400e;
+      text-decoration: line-through;
+    }
+
+    .bundle-new {
+      font-size: 26px;
+      font-weight: 800;
+      color: #dc2626;
+    }
+
+    .bundle-per-unit {
+      font-size: 12px;
+      font-weight: 700;
+      color: #15803d;
+      background: #dcfce7;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-top: 2px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-num {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 28px;
+      font-weight: 800;
+      color: #e2e8f0;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      padding-right: 40px;
+    }
+
+    .benefit-desc {
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .specs-list {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 13px;
+    }
+
+    .spec-item:last-child {
+      border-bottom: none;
+    }
+
+    .spec-name {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .spec-val {
+      font-weight: 700;
+      color: #0f172a;
+      text-align: right;
+    }
+
+    .rating-summary {
+      background: #eff6ff;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .rating-score {
+      font-size: 36px;
+      font-weight: 800;
+      color: #1e40af;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 18px;
+      margin: 4px 0;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .avatar-circle {
+      width: 40px;
+      height: 40px;
+      background: #3b82f6;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .review-author {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .review-meta {
+      font-size: 11px;
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .review-date {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-left: auto;
+    }
+
+    .review-text {
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-text h4 {
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* ФОРМА ЗАМОВЛЕННЯ */
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .input-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .input-field, .select-field {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #fff;
+    }
+
+    .input-field:focus, .select-field:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: #cbd5e1;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-container">
+
+  <!-- ================= БЛОК 1: ГОЛОВНИЙ ОФЕР ================= -->
+  <section style="padding:0;">
+    <div class="timer-block">
+      <div class="timer-title">⏰ Пропозиція закінчиться через:</div>
+      <div class="timer-boxes">
+        <div class="timer-box">
+          <div class="timer-val" id="timer-hours">00</div>
+          <div class="timer-label">годин</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-val" id="timer-minutes">00</div>
+          <div class="timer-label">хвилин</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-val" id="timer-seconds">00</div>
+          <div class="timer-label">секунд</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-banner">
+      🔥 Встигни замовити до підвищення цін! Знижка -31% сьогодні
+    </div>
+
+    <div style="padding: 16px 16px 0 16px;">
+      <h1 class="text-center" style="font-size: 20px; margin-bottom: 8px;">Ортопедична подушка «Метелик» з ефектом пам'яті</h1>
+
+      <img src="q1.png" alt="Головне фото подушки Метелик">
+
+      <div class="badge-row">
+        <div class="badge-item">🚚 Доставка НП</div>
+        <div class="badge-item">⚡ Акція -31%</div>
+        <div class="badge-item">📦 Оплата при отриманні</div>
+      </div>
+
+      <div class="price-container">
+        <div>
+          <span class="old-price">1 280 грн</span>
+          <span class="discount-badge">-31%</span>
+        </div>
+        <div class="new-price">880 грн</div>
+      </div>
+
+      <a href="#order6" class="btn-primary">Замовити по знижці</a>
+
+      <ul class="checklist">
+        <li>Анатомічна форма метелика підтримує шию та плечі</li>
+        <li>Преміальний пінополіуретан Memory Foam</li>
+        <li>Повністю знімає біль і напругу під час сну</li>
+        <li>Гіпоалергенний дихаючий чохол на блискавці</li>
+      </ul>
+
+      <div class="stock-counter">
+        Залишилось по акції: <strong>14 шт.</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 2: ОПИС ТОВАРУ ================= -->
+  <section>
+    <h2 class="section-title">Здоровий сон без болю у шиї</h2>
+    <p style="font-size: 14px; color: #334155; margin-bottom: 12px; text-align: center;">
+      Ортопедична подушка <strong>«Метелик»</strong> розроблена спеціально для фізіологічно правильної підтримки хребта під час сну на боці та спині.
+    </p>
+    <p style="font-size: 13px; color: #64748b; text-align: center; margin-bottom: 16px;">
+      Завдяки виїмкам під плечі та ефекту пам'яті Memory Foam вона точно повторює контури вашої шиї, розслабляючи м'язи та покращуючи кровообіг голови.
+    </p>
+    
+    <div style="background:#f1f5f9; padding: 10px; border-radius: 8px; text-align:center; font-weight:700; font-size:13px; color:#1e293b;">
+      ✨ Комфорт · Анатомічність · Здоровий хребет
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 3: ПЕРЕВАГИЗ ФОТО ================= -->
+  <section>
+    <h2 class="section-title">Чому обирають «Метелик»</h2>
+
+    <div class="benefit-card">
+      <div class="benefit-num">01</div>
+      <div class="benefit-title">Анатомічна підтримка 360°</div>
+      <div class="benefit-desc">Завдяки унікальній формі метелика шия не прогинається, а хребет залишається рівним усю ніч.</div>
+      <img src="q2.png" alt="Анатомічна підтримка шиї">
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-num">02</div>
+      <div class="benefit-title">Ефект Memory Foam</div>
+      <div class="benefit-desc">Адаптивна піна реагує на температуру та вагу тіла, створюючи відчуття невагомості без зворотного тиску.</div>
+      <img src="q3.png" alt="Матеріал Memory Foam">
+    </div>
+
+    <!-- АКЦІЙНИЙ БАНЕР -->
+    <div class="bundle-card">
+      <div class="bundle-badge">🔥 ВИГІДНА ПРОПОЗИЦІЯ!</div>
+      <div class="bundle-title">ЗАМОВЛЯЙТЕ 2 ПОДУШКИ ДЛЯ СІМ'Ї</div>
+      <p style="font-size: 12px; color: #92400e; text-align: center; margin-top: 4px;">Замовляйте комплект із двох подушок та економте ще більше!</p>
+      
+      <div class="bundle-price-box">
+        <div class="bundle-old">2 580 грн</div>
+        <div class="bundle-new">1 550 грн <span style="font-size:14px; font-weight:600; color:#78350f;">за 2 шт.</span></div>
+        <div class="bundle-per-unit">всього 775 грн / шт. (економія 1 030 грн)</div>
+      </div>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-num">03</div>
+      <div class="benefit-title">Легке дихання та без хропіння</div>
+      <div class="benefit-desc">Правильне положення голови відкриває дихальні шляхи, зменшуючи або полностью усуваючи хропіння.</div>
+      <img src="q4.png" alt="Сон без хропіння">
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-num">04</div>
+      <div class="benefit-title">Гігієна та знімний чохол</div>
+      <div class="benefit-desc">Дихаюча гіпоалергенна тканина на блискавці легко знімається та прається у звичайній машинці.</div>
+      <img src="q5.png" alt="Знімний чохол">
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 4: ХАРАКТЕРИСТИКИ ================= -->
+  <section>
+    <h2 class="section-title">Характеристики</h2>
+
+    <img src="har.png" alt="Розміри подушки">
+
+    <div class="specs-list">
+      <div class="spec-item">
+        <span class="spec-name">Модель:</span>
+        <span class="spec-val">Ортопедична «Метелик»</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-name">Наповнювач:</span>
+        <span class="spec-val">100% Memory Foam</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-name">Розмір:</span>
+        <span class="spec-val">58 × 41 × 13 см</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-name">Матеріал чохла:</span>
+        <span class="spec-val">Дихаючий трикотаж</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-name">Особливості:</span>
+        <span class="spec-val">Знімний чохол на блискавці</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-name">Призначення:</span>
+        <span class="spec-val">Для сну на боці та спині</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 5: ВІДГУКИ ================= -->
+  <section>
+    <h2 class="section-title">Відгуки покупців</h2>
+
+    <div class="rating-summary">
+      <div class="rating-score">4.9 / 5.0</div>
+      <div class="stars">★★★★★</div>
+      <div style="font-size: 12px; color: #64748b;">на основі 48 відгуків</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="avatar-circle">О</div>
+        <div>
+          <div class="review-author">Олена Кравченко</div>
+          <div class="review-meta">✓ Перевірений покупець</div>
+        </div>
+        <div class="review-date">Вчора</div>
+      </div>
+      <div class="stars" style="font-size: 14px; margin: 0 0 4px 0;">★★★★★</div>
+      <div class="review-text">
+        Це просто порятунок для моєї шиї! Раніше щоранку вставала з головним болем. На подушці «Метелик» заснула миттєво, шия за ніч взагалі не затікає. Дуже дякую за швидку доставку!
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="avatar-circle" style="background:#10b981;">М</div>
+        <div>
+          <div class="review-author">Михайло Сергієнко</div>
+          <div class="review-meta">✓ Перевірений покупець</div>
+        </div>
+        <div class="review-date">2 дні тому</div>
+      </div>
+      <div class="stars" style="font-size: 14px; margin: 0 0 4px 0;">★★★★★</div>
+      <div class="review-text">
+        Скористався акцією та взяв одразу 2 подушки для себе й дружини по 775 грн. Якість супер, ефект пам'яті дійсно працює, а не просто м'який поролон. Дуже вигідно вийшло!
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="avatar-circle" style="background:#8b5cf6;">І</div>
+        <div>
+          <div class="review-author">Ірина Ткаченко</div>
+          <div class="review-meta">✓ Перевірений покупець</div>
+        </div>
+        <div class="review-date">4 дні тому</div>
+      </div>
+      <div class="stars" style="font-size: 14px; margin: 0 0 4px 0;">★★★★★</div>
+      <div class="review-text">
+        Подушка прийшла на наступний день на Нову Пошту. Перевірила при отриманні, чохол приємний на дотик. Сплю вже тиждень — перестала терти плечі під час сну.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 6: ЯК ЗАМОВИТИ ================= -->
+  <section>
+    <h2 class="section-title">Як зробити замовлення</h2>
+
+    <div class="steps-container">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h4>Залиште заявку</h4>
+          <p>Заповніть форму замовлення з адресою Нової Пошти внизу сторінки.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h4>Підтвердження</h4>
+          <p>Наш менеджер зателефонує вам для підтвердження відправки.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h4>Оплата при отриманні</h4>
+          <p>Отримайте та перевірте товар у відділенні Нової Пошти, після чого оплатіть.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= БЛОК 7: ФІНАЛЬНА ФОРМА ЗАМОВЛЕННЯ ================= -->
+  <section id="order6" style="padding:0; background:#f8fafc;">
+    <div class="timer-block">
+      <div class="timer-title">⏰ Акція закінчується через:</div>
+      <div class="timer-boxes">
+        <div class="timer-box">
+          <div class="timer-val" id="timer-hours2">00</div>
+          <div class="timer-label">годин</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-val" id="timer-minutes2">00</div>
+          <div class="timer-label">хвилин</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-val" id="timer-seconds2">00</div>
+          <div class="timer-label">секунд</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-banner">
+      🔥 ОФОРМІТЬ ЗАМОВЛЕННЯ ЗІ ЗНИЖКОЮ ПРОСТО ЗАРАЗ!
+    </div>
+
+    <div style="padding: 20px 16px;">
+      <img src="q1.png" alt="Фото для форми замовлення">
+
+      <div class="badge-row">
+        <div class="badge-item">🚚 Доставка НП</div>
+        <div class="badge-item">⚡ Гарантія 14 днів</div>
+        <div class="badge-item">📦 Без передплати</div>
+      </div>
+
+      <div class="price-container">
+        <div>
+          <span class="old-price">1 280 грн</span>
+          <span class="discount-badge">-31%</span>
+        </div>
+        <div class="new-price">880 грн</div>
+      </div>
+
+      <div class="text-center">
+        <h3 style="font-size: 18px;">Заповніть дані для відправки</h3>
+        <p style="font-size: 12px; color: #64748b;">Менеджер зв'яжеться з вами для підтвердження</p>
+      </div>
+
+      <!-- Повна форма із замовленням у Telegram -->
+      <form class="order-form" id="main-form">
+        
+        <div class="input-group">
+          <label for="user-offer">Оберіть комплект:</label>
+          <select id="user-offer" class="select-field" required>
+            <option value="1 шт. — 880 грн">1 шт. — 880 грн (акційна ціна)</option>
+            <option value="2 шт. — 1550 грн (775 грн/шт)">🎁 2 шт. — 1 550 грн (вигода 1 030 грн)</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="user-name">ПІБ отримувача:</label>
+          <input type="text" id="user-name" class="input-field" placeholder="Шевченко Олена Іванівна" required>
+        </div>
+
+        <div class="input-group">
+          <label for="user-phone">Номер телефону:</label>
+          <input type="tel" id="user-phone" class="input-field" placeholder="+38 (0__) ___-__-__" required>
+        </div>
+
+        <div class="input-group">
+          <label for="user-city">Місто / Населений пункт:</label>
+          <input type="text" id="user-city" class="input-field" placeholder="м. Київ" required>
+        </div>
+
+        <div class="input-group">
+          <label for="user-np">№ або адреса відділення Нової Пошти:</label>
+          <input type="text" id="user-np" class="input-field" placeholder="Відділення № 12 (вул. Хрещатик...)" required>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary" style="margin-top: 8px;">Оформити замовлення</button>
+      </form>
+
+      <div class="stock-counter" style="margin-top: 12px;">
+        Залишилось по акції: <strong>14 шт.</strong>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ФУТЕР ================= -->
+  <footer>
+    <p>ТОВ «ТОВАР-ДРОП» | ЄДРПОУ 48291048</p>
+    <p style="margin: 4px 0;"><a href="#">Політика конфіденційності</a> | <a href="#">Угода користувача</a></p>
+    <p>Всі права захищено © 2026</p>
+  </footer>
+
+</div>
+
+<!-- JS СКРИПТИ -->
+<script>
+  // 1. СИНХРОНІЗОВАНИЙ ТАЙМЕР
+  function updateTimer() {
+    const now = new Date();
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+    const diff = Math.floor((endOfDay - now) / 1000);
+
+    if (diff <= 0) return;
+
+    const hours = Math.floor(diff / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
+    const seconds = diff % 60;
+
+    const hStr = hours < 10 ? '0' + hours : hours;
+    const mStr = minutes < 10 ? '0' + minutes : minutes;
+    const sStr = seconds < 10 ? '0' + seconds : seconds;
+
+    document.getElementById('timer-hours').textContent = hStr;
+    document.getElementById('timer-minutes').textContent = mStr;
+    document.getElementById('timer-seconds').textContent = sStr;
+
+    document.getElementById('timer-hours2').textContent = hStr;
+    document.getElementById('timer-minutes2').textContent = mStr;
+    document.getElementById('timer-seconds2').textContent = sStr;
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+
+  // 2. МАСКА ДЛЯ ТЕЛЕФОНУ (+380...)
+  const phoneInput = document.getElementById('user-phone');
+
+  phoneInput.addEventListener('input', function (e) {
+    let matrix = "+38 (0__) ___-__-__",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+
+    if (def.length >= val.length) val = def;
+
+    this.value = matrix.replace(/./g, function (a) {
+      return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+    });
+  });
+
+  phoneInput.addEventListener('focus', function () {
+    if (this.value === "") {
+      this.value = "+38 (0";
+    }
+  });
+
+  // 3. ПЛАВНИЙ СКРОЛ ДО ФОРМИ
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // 4. ВІДПРАВКА ЗАЯВКИ У TELEGRAM BOT
+  document.getElementById('main-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // ВСТАВЛЕНІ ВАШІ ДАНІ TELEGRAM БОТА
+    const BOT_TOKEN = '8736501321:AAFwTesZRTsohhPLArjdXoIKGFi0S8JFgdk';
+    const CHAT_ID = '1230506094';
+
+    const offer = document.getElementById('user-offer').value;
+    const name = document.getElementById('user-name').value.trim();
+    const phone = document.getElementById('user-phone').value.trim();
+    const city = document.getElementById('user-city').value.trim();
+    const np = document.getElementById('user-np').value.trim();
+
+    if (name === "" || phone.length < 18 || city === "" || np === "") {
+      alert("Будь ласка, заповніть усі поля коректно!");
+      return;
+    }
+
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Надсилання...";
+
+    // Формування повідомлення для Telegram
+    const message = `🔥 *НОВЕ ЗАМОВЛЕННЯ!* 🔥\n\n` +
+                    `📦 *Комплект:* ${offer}\n` +
+                    `👤 *ПІБ:* ${name}\n` +
+                    `📞 *Телефон:* ${phone}\n` +
+                    `🏙 *Місто:* ${city}\n` +
+                    `🚚 *Нова Пошта:* ${np}\n\n` +
+                    `⏰ *Час:* ${new Date().toLocaleString('uk-UA')}`;
+
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        alert("Дякуємо за замовлення! Наш менеджер зв'яжеться з вами найближчим часом для підтвердження.");
+        document.getElementById('main-form').reset();
+      } else {
+        alert("Помилка при відправці. Перевірте, чи ви натиснули /start у вашому боті!");
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert("Сталася помилка з'єднання. Перевірте підключення до мережі.");
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Оформити замовлення";
+    });
+  });
+</script>
+
+</body>
+</html>
